@@ -1,24 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TaskModule } from './task/task.module';
+import { environment } from 'src/environments/environment';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SignInModule } from './auth/sign-in/sign-in.module';
-import { SharedComponent } from './shared/shared.component';
-import { PersonalComponent } from './personal/personal.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SharedComponent,
-    PersonalComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +21,7 @@ import { PersonalComponent } from './personal/personal.component';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    TaskModule,
+    BrowserAnimationsModule,
     DashboardModule,
     SignInModule
   ],

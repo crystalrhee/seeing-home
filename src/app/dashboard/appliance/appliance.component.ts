@@ -23,7 +23,7 @@ export class ApplianceComponent implements OnInit {
   getAppliances$() {
     for (let item of [this._appliances$]) { 
       item;
-    }  
+    }
     return this._appliances$;
   }
 

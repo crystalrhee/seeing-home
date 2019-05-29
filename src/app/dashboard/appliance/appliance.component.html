@@ -1,7 +1,20 @@
-{{ getAppliances$() | async | json }}
 <ul>
   <li *ngFor="let app of getAppliances$() | async" (click)="toggleState(app.key, app.isUsed)">
     {{ app.key }} - {{ app.name }} - {{ app.isUsed }}
   </li>
 </ul>
 
+<div class="row text-center">
+  <div class="col-sm">
+    <i class="fas fa-coffee fa-5x"></i>
+  </div>
+  <div class="col-sm">
+    <i class="fas fa-utensils fa-5x"></i>
+  </div>
+  <div class="col-sm">
+    <i class="fas fa-fire-alt fa-5x"></i>
+  </div>
+  <div class="col-sm">
+    <i class="fas fa-water fa-5x"></i>
+  </div>
+</div>

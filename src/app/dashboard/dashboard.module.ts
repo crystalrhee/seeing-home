@@ -3,17 +3,21 @@ import { CommonModule } from '@angular/common';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { ApplianceComponent } from './appliance/appliance.component';
 import { PostComponent } from './post/post.component';
+import { SidebarModule } from './sidebar/sidebar.module';
+import { RentComponent } from './rent/rent.component';
+import { MiscModule } from './misc/misc.module';
 
 @NgModule({
-  declarations: [DashboardComponent, SidebarComponent, ApplianceComponent, PostComponent],
+  declarations: [DashboardComponent, ApplianceComponent, PostComponent, RentComponent],
   exports: [DashboardComponent],
   imports: [
     CommonModule,
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    SidebarModule,
+    MiscModule
   ]
 })
 export class DashboardModule { }

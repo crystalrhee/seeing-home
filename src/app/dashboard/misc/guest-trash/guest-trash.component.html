@@ -1,0 +1,6 @@
+{{ getStates$() | async | json }}
+<ul>
+  <li *ngFor="let app of getStates$() | async" (click)="toggleState(app.key, app.isThere)">
+    {{ app.key }} - {{ app.name }} - {{ app.isThere }}
+  </li>
+</ul>

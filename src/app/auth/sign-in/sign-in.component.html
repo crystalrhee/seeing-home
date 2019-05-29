@@ -1,0 +1,41 @@
+<div class="container w-100 text-center">
+  <h2>Select <b>Roommate</b></h2>
+  <div class="row">
+    <div class="col-sm">
+      <div class="user-profile"
+      id=0
+      (click)="setSelected(0)"
+      [ngClass]="{'active': selectedId === 0}">
+        Crystal
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="user-profile"
+      id=1
+      (click)="setSelected(1)"
+      [ngClass]="{'active': selectedId === 1}">
+        Jessica
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="user-profile"
+      id=2
+      (click)="setSelected(2)"
+      [ngClass]="{'active': selectedId === 2}">
+        Matt
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="user-profile"
+      id=3
+      (click)="setSelected(3)"
+      [ngClass]="{'active': selectedId === 3}">
+        Spenser
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-block btn-danger" (click)="logIn()">Select</button>
+  <p *ngFor="let task of tasks | async">
+    {{ task | json }}
+  </p>
+</div>

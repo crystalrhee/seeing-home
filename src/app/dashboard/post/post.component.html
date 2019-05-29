@@ -1,0 +1,14 @@
+{{ getPost$() | async | json }}
+<ul>
+  <li *ngFor="let post of getPost$() | async">
+    {{ post.key }} - {{ post.content }} - {{ post.author }} - {{ post.created }}
+  </li>
+</ul>
+
+<div *ngIf="getUser$() | async as user">
+  <div>
+    <label>Post</label>
+    <input [(ngModel)]="postInput" maxlength="140">
+    <button (click)="addPost(user.uid)" [disabled]="disableButton">Post</button>
+  </div>
+</div>

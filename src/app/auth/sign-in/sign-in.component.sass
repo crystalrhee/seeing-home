@@ -1,0 +1,27 @@
+.container
+    margin: 10% auto;
+
+.user-profile
+    position: relative;
+    display: inline-block;
+    width: 175px;
+    height: 175px;
+    border: 2px solid #e1e1e1;
+    border-radius: 50%;
+    margin: 0 30px;
+    cursor: pointer;
+    &.active
+        border: 2px solid #de5c50;
+        &:before
+            font-family: FontAwesome;
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background-color: #de5c50;
+            position: absolute;
+            right: 4px;
+            top: 20px;
+        &:after
+            color: #de5c50;

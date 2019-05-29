@@ -1,0 +1,7 @@
+{{ getAppliances$() | async | json }}
+<ul>
+  <li *ngFor="let app of getAppliances$() | async" (click)="toggleState(app.key, app.isUsed)">
+    {{ app.key }} - {{ app.name }} - {{ app.isUsed }}
+  </li>
+</ul>
+

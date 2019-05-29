@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAd5DBpdaeRbdGQFQH6kVB1VHcsmXg_vfE",
+    authDomain: "seeing-home.firebaseapp.com",
+    databaseURL: "https://seeing-home.firebaseio.com",
+    projectId: "seeing-home",
+    storageBucket: "seeing-home.appspot.com",
+    messagingSenderId: "1060430347340",
+    appId: "1:1060430347340:web:0083ec03a6484965"
+  }
 };
 
 /*

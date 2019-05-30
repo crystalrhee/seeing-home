@@ -10,6 +10,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rent.component.sass']
 })
 export class RentComponent implements OnInit {
+  monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  currentMonth = new Date();
+  month = this.monthNames[this.currentMonth.getMonth()]
+
 
   constructor(private db: AngularFireDatabase, private fireAuth: AngularFireAuth) { }
   private _rent$: Observable<any>;
@@ -28,5 +34,9 @@ export class RentComponent implements OnInit {
 
   getRent$() {
     return this._rent$;
+  }
+
+  getMonth() {
+    return this.month;
   }
 }

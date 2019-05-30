@@ -1,14 +1,22 @@
-{{ getPost$() | async | json }}
-<ul>
-  <li *ngFor="let post of getPost$() | async">
-    {{ post.key }} - {{ post.content }} - {{ post.author }} - {{ post.created }}
-  </li>
-</ul>
-
-<div *ngIf="getUser$() | async as user">
-  <div>
-    <label>Post</label>
-    <input [(ngModel)]="postInput" maxlength="140">
-    <button (click)="addPost(user.uid)" [disabled]="disableButton">Post</button>
+<div class="posts" *ngIf="getPost$() | async; let posts">
+  <div class="post" *ngFor="let post of posts | slice:-3">
+    <article class="media">
+      <div class="media-left">
+          <img [src]="'../../../' + post.image">
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p><strong>{{ post.author }} </strong><small>{{ post.created | date: 'yyyy-MM-dd hh:mma'}}</small></p>
+          <p class="content">{{ post.content }}</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div *ngIf="getUser$() | async as user">
+    <div class="d-flex textContainer">
+      <input [(ngModel)]="postInput" type="text" placeholder="Write something..." maxlength="140">
+      <button (click)="addPost(user.uid)" [disabled]="disableButton"><i class="fa fa-arrow-up"></i></button>
+    </div>
   </div>
 </div>
+

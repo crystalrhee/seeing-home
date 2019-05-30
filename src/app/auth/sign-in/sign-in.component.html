@@ -1,6 +1,6 @@
-<div class="container w-100 text-center">
-  <h2>Select <b>Roommate</b></h2>
-  <div class="row">
+<div id="roommateSelector" class="container w-100 text-center">
+  <h2 class="pb-5">Select <b>Roommate</b></h2>
+  <div class="row pb-5">
     <div class="col-sm">
       <div class="user-profile"
       id=0
@@ -38,5 +38,7 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-block btn-danger" (click)="logIn()">Select</button>
+  <div class="w-25 m-auto">
+  <button class="btn btn-block btn-outline-primary" (click)="logIn()" [disabled]="noSelection()">Select</button>
+  </div>
 </div>

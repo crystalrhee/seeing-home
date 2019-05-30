@@ -37,6 +37,7 @@ export class PostComponent implements OnInit {
   addPost(userId) {
     this.db.list(`all-users/posts`).push({
       author: this.fireAuth.auth.currentUser.displayName,
+      image: this.fireAuth.auth.currentUser.photoURL,
       content: this.postInput,
       created: firebase.database.ServerValue.TIMESTAMP
     }).then(() => {

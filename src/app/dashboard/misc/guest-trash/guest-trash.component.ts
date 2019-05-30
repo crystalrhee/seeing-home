@@ -11,8 +11,6 @@ import { map } from 'rxjs/operators';
 })
 export class GuestTrashComponent implements OnInit {
   private _states$: Observable<any>;
-  private guest: string;
-  private trash: string;
 
   constructor(private db: AngularFireDatabase, private fireAuth: AngularFireAuth) { }
 

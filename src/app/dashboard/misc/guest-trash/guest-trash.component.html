@@ -1,6 +1,16 @@
-{{ getStates$() | async | json }}
-<ul>
-  <li *ngFor="let app of getStates$() | async" (click)="toggleState(app.key, app.isThere)">
-    {{ app.key }} - {{ app.name }} - {{ app.isThere }}
-  </li>
-</ul>
+<div *ngIf="getStates$() | async; let states">
+    <div class="row text-center p-0">
+      <div class="col" *ngFor="let state of states" [ngSwitch]="state.name">
+        <div class="card">
+          <i class="fas fa-user fa-5x" 
+          [ngClass]="{'on': state.isThere === true}"
+          *ngSwitchCase="'guest'"
+          (click)="toggleState(state.key, state.isThere)"></i>
+          <i class="fas fa-trash fa-5x" 
+          [ngClass]="{'on': state.isThere === true}"
+          *ngSwitchCase="'trash'"
+          (click)="toggleState(state.key, state.isThere)"></i>
+        </div>
+      </div>
+    </div>
+  </div>

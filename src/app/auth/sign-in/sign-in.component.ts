@@ -44,6 +44,10 @@ export class SignInComponent {
   ngOnInit() {
   }
 
+  noSelection() {
+    return this.selectedId < 0;
+  }
+
   setSelected(id: number) {
     this.selectedId = id;
   }

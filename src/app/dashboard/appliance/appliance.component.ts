@@ -11,6 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class ApplianceComponent implements OnInit {
   private _appliances$: Observable<any>;
+  coffee
 
   constructor(private db: AngularFireDatabase, private fireAuth: AngularFireAuth) { }
 
@@ -21,15 +22,11 @@ export class ApplianceComponent implements OnInit {
   }
 
   getAppliances$() {
-    for (let item of [this._appliances$]) { 
-      item;
-    }
     return this._appliances$;
   }
 
   toggleState(appKey, isUsed) {
     let state = !isUsed;
-    console.log(state);
     this.db.object(`all-users/state/${appKey}/isUsed`).set(state);
   }
 }

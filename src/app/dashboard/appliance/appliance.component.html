@@ -1,20 +1,24 @@
-<ul>
-  <li *ngFor="let app of getAppliances$() | async" (click)="toggleState(app.key, app.isUsed)">
-    {{ app.key }} - {{ app.name }} - {{ app.isUsed }}
-  </li>
-</ul>
-
-<div class="row text-center">
-  <div class="col-sm">
-    <i class="fas fa-coffee fa-5x"></i>
-  </div>
-  <div class="col-sm">
-    <i class="fas fa-utensils fa-5x"></i>
-  </div>
-  <div class="col-sm">
-    <i class="fas fa-fire-alt fa-5x"></i>
-  </div>
-  <div class="col-sm">
-    <i class="fas fa-water fa-5x"></i>
+<div *ngIf="getAppliances$() | async; let apps">
+  <div class="row text-center p-0">
+    <div class="col-sm" *ngFor="let app of apps" [ngSwitch]="app.name">
+      <div class="card">
+        <i class="fas fa-coffee fa-5x" 
+        [ngClass]="{'on': app.isUsed === true}"
+        *ngSwitchCase="'coffee'"
+        (click)="toggleState(app.key, app.isUsed)"></i>
+        <i class="fas fa-utensils fa-5x" 
+        [ngClass]="{'on': app.isUsed === true}"
+        *ngSwitchCase="'dishes'"
+        (click)="toggleState(app.key, app.isUsed)"></i>
+        <i class="fas fa-fire-alt fa-5x" 
+        [ngClass]="{'on': app.isUsed === true}"
+        *ngSwitchCase="'washer'"
+        (click)="toggleState(app.key, app.isUsed)"></i>
+        <i class="fas fa-water fa-5x" 
+        [ngClass]="{'on': app.isUsed === true}"
+        *ngSwitchDefault
+        (click)="toggleState(app.key, app.isUsed)"></i>
+      </div>
+    </div>
   </div>
 </div>

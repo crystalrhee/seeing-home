@@ -1,0 +1,4 @@
+<div class="card text-center" *ngIf="getRent$() | async as rent">
+  <p>Rent for <b>{{ getMonth()}}</b></p>
+  <h1>${{ rent.amount }}</h1>
+</div>

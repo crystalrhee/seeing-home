@@ -1,7 +1,17 @@
-<app-meeting></app-meeting>
-<app-guest-trash></app-guest-trash>
-<div>
-  <button (click)="getRandomUser()">
-    {{ selectedUser }}
-  </button>
+<div class="row">
+  <div class="col">
+    <app-rent></app-rent>
+  </div>
+  <div class="col">
+    <app-guest-trash></app-guest-trash>
+  </div>
+  <div class="col">
+    <div class="card text-center">
+      <p>Random User Generator</p>
+      <button class="btn btn-outline-info" (click)="getRandomUser()">
+        {{ selectedUser }}
+      </button>
+    </div>
+  </div>
 </div>
+

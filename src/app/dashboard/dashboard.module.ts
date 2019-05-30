@@ -6,11 +6,10 @@ import { DashboardComponent } from './dashboard.component';
 import { ApplianceComponent } from './appliance/appliance.component';
 import { PostComponent } from './post/post.component';
 import { SidebarModule } from './sidebar/sidebar.module';
-import { RentComponent } from './rent/rent.component';
 import { MiscModule } from './misc/misc.module';
 
 @NgModule({
-  declarations: [DashboardComponent, ApplianceComponent, PostComponent, RentComponent],
+  declarations: [DashboardComponent, ApplianceComponent, PostComponent],
   exports: [DashboardComponent],
   imports: [
     CommonModule,

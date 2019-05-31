@@ -2,7 +2,7 @@
 
 ## About
 
-ScholarJet competition submission: Seeing Home - dashboard to help students/families stay organized created by Wayfair. The project is deployed using firebase hosting at `https://seeing-home.firebaseapp.com/`. The backend is set up so that when a user clicks on a roommate, it imitates a log in process by passing in log in credentials. This makes the demo easier and it would also be easy to revert the code to requiring log in credentials.
+ScholarJet competition submission: Seeing Home - dashboard to help students/families stay organized created by Wayfair. The project is deployed using firebase hosting at `https://seeing-home.firebaseapp.com/`. The backend is set up so that when a user clicks on a roommate, it imitates a log in process by passing in log in credentials. This makes the demo easier and it would also be easy to revert the code to requiring log in credentials. All the data is stored in and retrieved from Firebase Realtime Database.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 

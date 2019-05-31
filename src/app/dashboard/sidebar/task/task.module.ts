@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TaskListComponent } from './task-list/task-list.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 @NgModule({
   declarations: [TaskListComponent],
@@ -10,7 +11,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ]
 })
 export class TaskModule { }

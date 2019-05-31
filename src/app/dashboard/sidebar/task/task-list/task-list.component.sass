@@ -1,0 +1,33 @@
+.tasks
+  li
+      border-left: 2px solid #f0c4ba;
+      list-style: none;
+
+.close
+  transition: opacity 0.3s linear, color 0.3s linear;
+
+.close:hover
+  cursor: pointer;
+  color: #9A5C32;
+
+input
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px 0 0 6px;
+
+button
+  width: 40px;
+  vertical-align: top;
+  border-radius: 0 6px 6px 0;
+  color: grey;
+  background: silver;
+  cursor: pointer;
+  transition: all 0.4s
+  &:hover
+    color: white;
+    background: #9A5C32
+
+input:focus
+    outline: #f0c4ba;
+    border-color: #f0c4ba;
+    box-shadow: none;

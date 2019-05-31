@@ -7,6 +7,7 @@ import { ApplianceComponent } from './appliance/appliance.component';
 import { PostComponent } from './post/post.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { MiscModule } from './misc/misc.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 @NgModule({
   declarations: [DashboardComponent, ApplianceComponent, PostComponent],
@@ -16,7 +17,8 @@ import { MiscModule } from './misc/misc.module';
     AngularFireDatabaseModule,
     FormsModule,
     SidebarModule,
-    MiscModule
+    MiscModule,
+    NgbModule.forRoot()
   ]
 })
 export class DashboardModule { }

@@ -1,16 +1,22 @@
 <div *ngIf="getStates$() | async; let states">
-    <div class="row text-center p-0">
-      <div class="col" *ngFor="let state of states" [ngSwitch]="state.name">
-        <div class="card">
-          <i class="fas fa-user fa-5x" 
-          [ngClass]="{'on': state.isThere === true}"
-          *ngSwitchCase="'guest'"
-          (click)="toggleState(state.key, state.isThere)"></i>
-          <i class="fas fa-trash fa-5x" 
-          [ngClass]="{'on': state.isThere === true}"
-          *ngSwitchCase="'trash'"
-          (click)="toggleState(state.key, state.isThere)"></i>
+  <div class="row text-center p-0">
+    <div class="col" *ngFor="let state of states" [ngSwitch]="state.name">
+      <div class="card">
+        <div [ngClass]="{'on': state.isThere === true}"
+        *ngSwitchCase="'guest'">
+          <i class="info far fa-question-circle" 
+          placement="top" 
+          ngbTooltip="There are no guests over if it's gray. All roommates can see the status real time."></i>
+          <i class="fas fa-user fa-5x" (click)="toggleState(state.key, state.isThere)"></i>
+        </div>
+        <div [ngClass]="{'on': state.isThere === true}"
+        *ngSwitchDefault>
+          <i class="info far fa-question-circle" 
+          placement="top" 
+          ngbTooltip="There is no trash if it's gray. All roommates can see the status real time."></i>
+          <i class="fas fa-trash fa-5x" (click)="toggleState(state.key, state.isThere)"></i>
         </div>
       </div>
     </div>
   </div>
+</div>
